@@ -9,38 +9,45 @@ import {
   RectangleGroupIcon,
 } from '@heroicons/react/24/outline';
 
-export const navigation = [
-  { name: 'Home', href: '#', icon: HomeIcon, current: false },
+export type NavItem = {
+  name: string;
+  href: string;
+  icon: typeof ChartPieIcon;
+  count?: string;
+};
+
+export const navigation: NavItem[] = [
+  { name: 'Home', href: '/home', icon: HomeIcon },
   {
     name: 'Dashboard',
-    href: '#',
+    href: '/dashboard',
     icon: ChartPieIcon,
-    current: false,
     count: '+20',
   },
   {
     name: 'Projects',
-    href: '#',
+    href: '/projects',
     icon: DocumentMagnifyingGlassIcon,
-    current: false,
     count: '10',
   },
   {
     name: 'Tasks',
-    href: '#',
+    href: '/tasks',
     icon: RectangleGroupIcon,
-    current: false,
   },
   {
     name: 'Reporting',
-    href: '#',
+    href: '/reporting',
     icon: FlagIcon,
-    current: false,
   },
-  { name: 'Users', href: '#', icon: UsersIcon, current: false },
+  { name: 'Users', href: '/users', icon: UsersIcon },
 ];
 
-export const secondaryNavigation = [
-  { name: 'Support', href: '#', icon: QuestionMarkCircleIcon, current: false },
-  { name: 'Settings', href: '#', icon: Cog8ToothIcon, current: true },
+export const secondaryNavigation: NavItem[] = [
+  {
+    name: 'Support',
+    href: '/support',
+    icon: QuestionMarkCircleIcon,
+  },
+  { name: 'Settings', href: '/settings', icon: Cog8ToothIcon },
 ];

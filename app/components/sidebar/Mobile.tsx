@@ -7,9 +7,9 @@ import {
   XMarkIcon,
 } from '@heroicons/react/24/outline';
 
+import { SidebarItem } from './SidebarItem';
 import { useNavContext } from '@/app/providers/NavProvider';
 import { navigation, secondaryNavigation } from '@/app/data/navigation';
-import { classNames } from '@/app/utils/classNames';
 
 import appLogo from '../../../public/logos/app-logo.png';
 
@@ -87,64 +87,14 @@ export function MobileSidebar() {
                     <nav className='mt-6 px-3 flex-grow'>
                       <div className='space-y-1'>
                         {navigation.map((item) => (
-                          <a
-                            key={item.name}
-                            href={item.href}
-                            className={classNames(
-                              item.current
-                                ? 'bg-gray-100 text-gray-900'
-                                : 'text-gray-700 hover:bg-gray-50 hover:text-gray-900',
-                              'group flex items-center rounded-md px-2 py-2 text-sm font-medium'
-                            )}
-                            aria-current={item.current ? 'page' : undefined}
-                          >
-                            <item.icon
-                              className={classNames(
-                                item.current
-                                  ? 'text-gray-600'
-                                  : 'text-gray-500 group-hover:text-gray-600',
-                                'mr-3 h-6 w-6 flex-shrink-0'
-                              )}
-                              aria-hidden='true'
-                            />
-                            {item.name}
-                            {item.count ? (
-                              <span
-                                className='ml-auto w-9 min-w-max whitespace-nowrap rounded-full bg-gray-100 px-2.5 py-0.5 text-center text-xs font-medium leading-5 text-gray-700'
-                                aria-hidden='true'
-                              >
-                                {item.count}
-                              </span>
-                            ) : null}
-                          </a>
+                          <SidebarItem key={item.name} item={item} />
                         ))}
                       </div>
                       <div className='mt-8'>
                         {/* Secondary navigation */}
                         <div className='mt-1 space-y-1'>
                           {secondaryNavigation.map((item) => (
-                            <a
-                              key={item.name}
-                              href={item.href}
-                              className={classNames(
-                                item.current
-                                  ? 'bg-gray-100 text-gray-900'
-                                  : 'text-gray-700 hover:bg-gray-50 hover:text-gray-900',
-                                'group flex items-center rounded-md px-2 py-2 text-sm font-medium'
-                              )}
-                              aria-current={item.current ? 'page' : undefined}
-                            >
-                              <item.icon
-                                className={classNames(
-                                  item.current
-                                    ? 'text-gray-600'
-                                    : 'text-gray-500 group-hover:text-gray-600',
-                                  'mr-3 h-6 w-6 flex-shrink-0'
-                                )}
-                                aria-hidden='true'
-                              />
-                              {item.name}
-                            </a>
+                            <SidebarItem key={item.name} item={item} />
                           ))}
                         </div>
                       </div>
