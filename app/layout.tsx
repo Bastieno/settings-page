@@ -7,20 +7,34 @@ const inter = Inter({ subsets: ['latin'] });
 
 export async function generateMetadata(): Promise<Metadata> {
   const headersList = headers();
-  const pathname = headersList.get('x-invoke-path') || 'Untitled UI';
+  let pathSegments: string[] = [];
 
-  // Split pathname into segments and remove empty segments
-  const pathSegments = pathname.split('/').filter((segment) => segment !== '');
-  // Capitalize the first letter of each segment
+  // For some reason, headersList.get('x-invoke-path') is not present in production
+  // So I try to use headersList.get('x-matched-path')
+  // The value of headersList.get('x-invoke-path') ends with .rsc
+  // So I replaced the .rsc with ''
+  if (headersList.get('x-invoke-path')) {
+    const pathname = headersList.get('x-invoke-path') || '';
+    pathSegments = pathname.split('/').filter((segment) => segment !== '');
+  } else if (headersList.get('x-matched-path')) {
+    const pathname = headersList.get('x-matched-path') || '';
+    pathSegments = pathname
+      .split('/')
+      .filter((segment) => segment !== '')
+      .map((segment) => segment.replace(/\.rsc$/, ''));
+  }
+
   const titleSegments = pathSegments.map(
     (segment) => segment.charAt(0).toUpperCase() + segment.slice(1)
   );
-  // Join segments with a separator
+  const hasTitleSegments = titleSegments.length > 0;
   const title = titleSegments.join(' › ');
 
   return {
-    title: `${title} | Untitled UI`,
-    description: `${title} page of an imaginary fintech app`,
+    title: hasTitleSegments ? `${title} | Untitled UI` : 'Untitled UI',
+    description: hasTitleSegments
+      ? `${title} page of an imaginary fintech app`
+      : '',
   };
 }
 
