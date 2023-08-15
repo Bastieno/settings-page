@@ -6,7 +6,7 @@ import {
   Cog8ToothIcon,
   FlagIcon,
   ChartPieIcon,
-  RectangleGroupIcon,
+  RectangleGroupIcon
 } from '@heroicons/react/24/outline';
 
 export type NavItem = {
@@ -22,32 +22,32 @@ export const navigation: NavItem[] = [
     name: 'Dashboard',
     href: '/dashboard',
     icon: ChartPieIcon,
-    count: '+20',
+    count: '+20'
   },
   {
     name: 'Projects',
     href: '/projects',
     icon: DocumentMagnifyingGlassIcon,
-    count: '10',
+    count: '10'
   },
   {
     name: 'Tasks',
     href: '/tasks',
-    icon: RectangleGroupIcon,
+    icon: RectangleGroupIcon
   },
   {
     name: 'Reporting',
     href: '/reporting',
-    icon: FlagIcon,
+    icon: FlagIcon
   },
-  { name: 'Users', href: '/users', icon: UsersIcon },
+  { name: 'Users', href: '/users', icon: UsersIcon }
 ];
 
 export const secondaryNavigation: NavItem[] = [
   {
     name: 'Support',
     href: '/support',
-    icon: QuestionMarkCircleIcon,
+    icon: QuestionMarkCircleIcon
   },
-  { name: 'Settings', href: '/settings', icon: Cog8ToothIcon },
+  { name: 'Settings', href: '/settings', icon: Cog8ToothIcon }
 ];

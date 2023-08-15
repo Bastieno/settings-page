@@ -12,7 +12,7 @@ export function DesktopSidebar() {
   return (
     <div className='hidden lg:fixed lg:inset-y-0 lg:flex lg:w-72 lg:flex-col lg:border-r lg:border-gray-200 lg:bg-white lg:pb-4 lg:pt-5'>
       {/* App logo and name */}
-      <div className='flex items-center px-3 mt-3 gap-2'>
+      <div className='mt-3 flex items-center gap-2 px-3'>
         <Image
           src={appLogo}
           alt='app logo'
@@ -51,7 +51,7 @@ export function DesktopSidebar() {
           </div>
         </div>
         {/* Navigation */}
-        <nav className='mt-4 px-3 flex-grow'>
+        <nav className='mt-4 flex-grow px-3'>
           <div className='space-y-1'>
             {navigation.map((item) => (
               <SidebarItem key={item.name} item={item} />
@@ -66,8 +66,8 @@ export function DesktopSidebar() {
             </div>
           </div>
           {/* What's new */}
-          <div className='bg-gray-50 px-4 py-6 my-4 rounded-lg'>
-            <p className='mb-3 text-sm leading-4 font-medium text-gray-900'>
+          <div className='my-4 rounded-lg bg-gray-50 px-4 py-6'>
+            <p className='mb-3 text-sm font-medium leading-4 text-gray-900'>
               New features are available!
             </p>
             <p className='mb-3 text-sm font-light text-gray-500'>
@@ -80,7 +80,7 @@ export function DesktopSidebar() {
               width={230}
               height={155}
             />
-            <div className='flex flex-shrink-0 space-x-4 mt-6'>
+            <div className='mt-6 flex flex-shrink-0 space-x-4'>
               <button type='button' className='block text-sm text-gray-500'>
                 Dismiss
               </button>
@@ -94,8 +94,8 @@ export function DesktopSidebar() {
           </div>
         </nav>
         {/* User avatar */}
-        <div className='px-3 mb-4 border-t border-gray-200'>
-          <div className='flex items-center justify-between mt-5'>
+        <div className='mb-4 border-t border-gray-200 px-3'>
+          <div className='mt-5 flex items-center justify-between'>
             <span className='flex min-w-0 items-center justify-between space-x-3'>
               <Image
                 className='rounded-full'
@@ -105,7 +105,7 @@ export function DesktopSidebar() {
                 height={40}
               />
               <span className='flex min-w-0 flex-1 flex-col'>
-                <span className='truncate text-sm leading-6 font-medium text-gray-900'>
+                <span className='truncate text-sm font-medium leading-6 text-gray-900'>
                   Olivia Rhye
                 </span>
                 <span className='truncate text-sm font-light text-gray-500'>

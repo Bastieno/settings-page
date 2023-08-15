@@ -10,5 +10,5 @@ export const tabs: Tab[] = [
   { name: 'Billing' },
   { name: 'Notifications' },
   { name: 'Integrations' },
-  { name: 'API' },
+  { name: 'API' }
 ];

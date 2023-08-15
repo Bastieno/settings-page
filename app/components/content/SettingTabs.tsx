@@ -1,5 +1,4 @@
 'use client';
-
 import { Dispatch, Fragment, SetStateAction, useState } from 'react';
 import { Listbox, Transition } from '@headlessui/react';
 import { CheckIcon, ChevronUpDownIcon } from '@heroicons/react/20/solid';
@@ -100,7 +99,7 @@ function DesktopTabs({ selected, setSelected }: TabsProps) {
                   : 'text-gray-500 hover:text-gray-700',
                 tabIdx === 0 ? 'rounded-l-lg' : '',
                 tabIdx === tabs.length - 1 ? 'rounded-r-lg' : '',
-                'group -ml-px relative overflow-hidden bg-white py-3 px-4 text-center text-sm font-medium cursor-pointer ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-10'
+                'group relative -ml-px cursor-pointer overflow-hidden bg-white px-4 py-3 text-center text-sm font-medium ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-10'
               )}
               onClick={() => setSelected(tab)}
               aria-current={isSelected ? 'page' : undefined}
@@ -125,7 +124,7 @@ export function SettingsTab() {
   const [selected, setSelected] = useState(tabs[0]);
   const props = {
     selected,
-    setSelected,
+    setSelected
   };
   return (
     <>

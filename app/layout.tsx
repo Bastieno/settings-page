@@ -1,7 +1,8 @@
-import './globals.css';
 import type { Metadata } from 'next';
 import { headers } from 'next/headers';
 import { Inter } from 'next/font/google';
+
+import './globals.css';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -34,12 +35,12 @@ export async function generateMetadata(): Promise<Metadata> {
     title: hasTitleSegments ? `${title} | Untitled UI` : 'Untitled UI',
     description: hasTitleSegments
       ? `${title} page of an imaginary fintech app`
-      : '',
+      : ''
   };
 }
 
 export default function RootLayout({
-  children,
+  children
 }: {
   children: React.ReactNode;
 }) {
