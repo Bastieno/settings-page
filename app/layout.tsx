@@ -11,7 +11,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
   // For some reason, headersList.get('x-invoke-path') is not present in production
   // So I try to use headersList.get('x-matched-path')
-  // The value of headersList.get('x-invoke-path') ends with .rsc
+  // The value of headersList.get('x-matched-path') ends with .rsc e.g "/settings.rsc"
   // So I replaced the .rsc with ''
   if (headersList.get('x-invoke-path')) {
     const pathname = headersList.get('x-invoke-path') || '';
