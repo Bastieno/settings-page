@@ -114,7 +114,7 @@ export function BillingTable() {
                       </th>
                       <th
                         scope='col'
-                        className='hidden relative py-3.5 pl-3 pr-4 sm:pr-3 lg:table-cell'
+                        className='relative hidden py-3.5 pl-3 pr-4 sm:pr-3 lg:table-cell'
                       >
                         <span className='sr-only'>Download</span>
                       </th>
@@ -184,7 +184,7 @@ export function BillingTable() {
                                 />
                               ))}
                               {item.totalUsers > item.users.length ? (
-                                <span className='h-6 w-6 inline-flex items-center justify-center bg-gray-50 rounded-full ring-2 ring-white text-xs font-medium pr-0.5'>
+                                <span className='inline-flex h-6 w-6 items-center justify-center rounded-full bg-gray-50 pr-0.5 text-xs font-medium ring-2 ring-white'>
                                   +{item.totalUsers - item.users.length}
                                 </span>
                               ) : null}

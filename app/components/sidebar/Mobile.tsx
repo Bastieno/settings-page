@@ -4,7 +4,7 @@ import { Dialog, Transition } from '@headlessui/react';
 import Image from 'next/image';
 import {
   ArrowRightOnRectangleIcon,
-  XMarkIcon,
+  XMarkIcon
 } from '@heroicons/react/24/outline';
 
 import { SidebarItem } from './SidebarItem';
@@ -71,7 +71,7 @@ export function MobileSidebar() {
                       </button>
                     </div>
                   </Transition.Child>
-                  <div className='flex flex-shrink-0 items-center px-3 mt-3 gap-4'>
+                  <div className='mt-3 flex flex-shrink-0 items-center gap-4 px-3'>
                     <Image
                       src={appLogo}
                       alt='app logo'
@@ -84,7 +84,7 @@ export function MobileSidebar() {
                     </h1>
                   </div>
                   <div className='mt-2 flex flex-1 flex-col overflow-y-auto pt-1'>
-                    <nav className='mt-6 px-3 flex-grow'>
+                    <nav className='mt-6 flex-grow px-3'>
                       <div className='space-y-1'>
                         {navigation.map((item) => (
                           <SidebarItem key={item.name} item={item} />
@@ -100,8 +100,8 @@ export function MobileSidebar() {
                       </div>
                     </nav>
 
-                    <div className='px-3 mb-4 border-t border-gray-200'>
-                      <div className='flex items-center justify-between mt-5'>
+                    <div className='mb-4 border-t border-gray-200 px-3'>
+                      <div className='mt-5 flex items-center justify-between'>
                         <span className='flex min-w-0 items-center justify-between space-x-3'>
                           <Image
                             className='rounded-full'

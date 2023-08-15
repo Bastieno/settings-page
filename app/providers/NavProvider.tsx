@@ -1,12 +1,11 @@
 'use client';
-
 import {
   createContext,
   useState,
   ReactNode,
   useContext,
   Dispatch,
-  SetStateAction,
+  SetStateAction
 } from 'react';
 
 type NavContextType = {
@@ -16,7 +15,7 @@ type NavContextType = {
 
 const NavContext = createContext<NavContextType>({
   isSidebarOpen: false,
-  setIsSidebarOpen: () => {},
+  setIsSidebarOpen: () => {}
 });
 
 export const useNavContext = () => useContext(NavContext);
@@ -26,7 +25,7 @@ function NavProvider({ children }: { children: ReactNode }) {
 
   const value = {
     isSidebarOpen,
-    setIsSidebarOpen,
+    setIsSidebarOpen
   };
 
   return <NavContext.Provider value={value}>{children}</NavContext.Provider>;

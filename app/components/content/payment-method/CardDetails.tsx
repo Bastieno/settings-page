@@ -1,5 +1,4 @@
 'use client';
-
 import { useState } from 'react';
 import Image from 'next/image';
 import { RadioGroup } from '@headlessui/react';
@@ -14,20 +13,18 @@ const cardData = [
     id: 1,
     description: 'Visa ending in 1234',
     expiry: 'Expiry 06/2024',
-    logo: visaLogo,
+    logo: visaLogo
   },
   {
     id: 2,
     description: 'Mastercard ending in 1234',
     expiry: 'Expiry 06/2024',
-    logo: mastercardLogo,
-  },
+    logo: mastercardLogo
+  }
 ];
 
 export function CardDetails() {
-  const [selectedCard, setSelectedCard] = useState(
-    cardData[0]
-  );
+  const [selectedCard, setSelectedCard] = useState(cardData[0]);
 
   return (
     <div className='py-6 sm:grid sm:grid-cols-3 sm:gap-4'>
@@ -38,10 +35,7 @@ export function CardDetails() {
         </p>
       </dt>
       <dd className='mt-3 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-1'>
-        <RadioGroup
-          value={selectedCard}
-          onChange={setSelectedCard}
-        >
+        <RadioGroup value={selectedCard} onChange={setSelectedCard}>
           <div className='grid grid-cols-1 gap-y-6'>
             {cardData.map((card) => (
               <RadioGroup.Option
@@ -60,7 +54,7 @@ export function CardDetails() {
                   <div
                     className={classNames(
                       checked ? 'border-purple-200 bg-purple-50' : 'bg-white',
-                      'relative flex gap-4 cursor-pointer rounded-lg border p-4 shadow-sm'
+                      'relative flex cursor-pointer gap-4 rounded-lg border p-4 shadow-sm'
                     )}
                   >
                     <div className='flex items-start'>

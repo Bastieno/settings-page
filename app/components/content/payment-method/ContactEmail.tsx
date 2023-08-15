@@ -6,13 +6,13 @@ const emailData = [
   {
     id: 'primary',
     title: 'Send to my account email',
-    value: 'olivia@untitledui.com',
+    value: 'olivia@untitledui.com'
   },
   {
     id: 'alternative',
     title: 'Send to an alternative email',
-    value: 'billing@untitledui.com',
-  },
+    value: 'billing@untitledui.com'
+  }
 ];
 
 export function ContactEmail() {
@@ -44,12 +44,12 @@ export function ContactEmail() {
                     className='h-4 w-4 border-gray-300 text-purple-600 focus:ring-purple-600'
                   />
                 </div>
-                <div className='ml-3 text-sm leading-6 w-full'>
+                <div className='ml-3 w-full text-sm leading-6'>
                   <label htmlFor={id} className='text-sm text-gray-900'>
                     {title}
                   </label>
                   {id === 'alternative' ? (
-                    <div className='relative mt-2 rounded-md shadow-sm w-full sm:w-[65%]'>
+                    <div className='relative mt-2 w-full rounded-md shadow-sm sm:w-[65%]'>
                       <div className='pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3'>
                         <EnvelopeIcon
                           className='h-5 w-5 text-gray-400'

@@ -5,12 +5,12 @@ import { Bars3CenterLeftIcon } from '@heroicons/react/24/outline';
 import { useNavContext } from '@/app/providers/NavProvider';
 import appLogo from '../../../public/logos/app-logo.png';
 
-export function MobileTopBar () {
+export function MobileTopBar() {
   const { setIsSidebarOpen } = useNavContext();
 
   return (
     <div className='sticky top-0 z-10 flex h-16 flex-shrink-0 border-b border-gray-200 bg-white lg:hidden'>
-      <div className='flex flex-grow items-center px-3 gap-4'>
+      <div className='flex flex-grow items-center gap-4 px-3'>
         <Image
           src={appLogo}
           alt='app logo'
